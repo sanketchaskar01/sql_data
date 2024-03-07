@@ -1,0 +1,10 @@
+show databases;
+use sanket1;
+show tables;
+select * from student1;
+desc student1;
+insert into student1 values (4,'abhishekh','jagtap',741852963),(5,'salman','khan',1234567890),(6,'amir','khan',0987456321);
+alter table student1 add column city varchar(300) default 'mumbai';
+insert into student1 values (7,'abhi','desai',5789634527,default),(8,'sujit','mishra',7425896304,default),(9,'aman','yagnik',9856314780,default);
+alter table student1 modify roll_no int auto_increment;
+insert into student1 (first_name,last_name,contact_no) values ('mukesh','ambani',5874632159),('nita','ambani',8569741259),('akash','ambani',6985321459);	
