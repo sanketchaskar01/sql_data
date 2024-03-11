@@ -9,3 +9,4 @@ alter table itvedant1 modify studid int auto_increment;
 insert into itvedant1 (studname) values ('omkar'),('sunny'),('siddhu');
 update itvedant1 set studname='mandar' where studid=4;
 delete from itvedant1 where studid=5;
+insert into itvedant1 (studname) values ('ashish'),('om'),('varad');
