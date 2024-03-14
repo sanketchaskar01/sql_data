@@ -16,4 +16,3 @@ select * from table2 except select * from table1;    # you can see all table2 va
 
 
 
-
