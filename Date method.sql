@@ -23,5 +23,9 @@ select * from abc;
 
 select id,date_format(dob,'%W,%d-%m-%y') as DOB, age from abc;    # for shwoing format date and temperory column name
                                           
+select dayname('1947-08-15');                                 # for see the date which day is
+select substr("sanket chaskar",1,6);
+select monthname('1997-05-01');
+select upper('sanket');
 
 

@@ -1,0 +1,18 @@
+create database carshowroom;
+use carshowroom;
+create table Inventory (car_id varchar(20) primary key, car_name varchar(20), price float, model varchar(20), yearmanufacture bigint, fueltype varchar(20));
+insert into inventory values ('D001','dzire','582613.00','LXI',2023,'Petrol'),('D002','dzire','673112.00','VXI',2023,'Petrol'),('B001','Baleno','567031.00','sigma 1.2',2024,'Petrol'),('B002','Baleno','647857.00','Delta 1.2',2023,'Petrol'),('E001','Eeco','355205.00','5 Str STD',2022,'CNG'),('E002','Eeco','654914.00','Care','2023','Cng'),('S001','Swift','514000.00','LXI',2022,'Petrol'),('S002','Swift','614000.00','VXI',2023,'Petrol');
+select * from Inventory;
+create table Employee (emp_id varchar(20) primary key, emp_name varchar(20),DOB varchar(20), DOJ varchar(20),Designation varchar(50),salary float);
+insert into Employee values ('E001','Rushil','1994-07-10','2020-12-12','salesman','25550.00'),('E002','Sanjay','1990-03-12','2019-06-05','Salesman',33100.00),('E003','Zohar','1975-08-30','2015-01-08','Peon','20000.00'),('E004','Arpit','1989-06-06','2018-12-02','Salesman','39100.00'),('E005','Sanju','1985-01-09','2017-02-03','Receptionist','27350.00'),('E006','Mayank','1995-04-03','2021-01-01','Salesman',27352),('E007','Rajkumar','1996-02-06','2018-10-23','Salesman','31111.00');
+select * from Employee;
+desc inventory;
+desc sale;
+create table customer (cust_id varchar(20) primary key, cust_name varchar(20),cust_add varchar(50),phone bigint,email varchar(50));
+insert into customer value ('C001','Amit shah','Shivaji nagar Thane',7856986324,'amitshah004@gmail.com'),('C002','Saud sayeed','Vikhroli west',9863257841,'saudsayeed34@gmail.com'),('C003','Ashish More','Murbad road Thane',8563957415,'ashishmore07@gmail.com'),('C004','Mandar Vaidya','Dombivli west Thane',8697423659,'sunnyvaidya112@gmail.com');
+select * from customer;
+use carshowroom;
+create table Sale (InvoiceNo varchar(20), car_id varchar(20), foreign key(car_id) references Inventory(car_id),cust_id varchar(20), foreign key(cust_id) references customer(cust_id),saledate varchar(20), paymentmode varchar(20),emp_id varchar(20), foreign key(emp_id) references employee(emp_id),salesprice float);
+desc sale;
+insert into sale value ('I00001','D001','C001','2023-01-24','Credit card','E004','613248.00'),('I00002','S001','C002','2023-12-12','Online','E001','590321.00'),('I00003','S002','C004','2023-01-05','Cheque','E007','604000.00'),('I00004','D002','C001','2023-10-25','Bank Finance','E006','659982.00'),('I00005','E001','C003','2023-12-20','Credit card','E002','369310.00'),('I00006','S002','C002','2023-01-30','Bank Finance','E006','620214.00');
+select * from sale;

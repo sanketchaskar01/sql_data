@@ -19,4 +19,10 @@ select substring('my name is sanket','12');
 select rtrim('                    my     ');  #if you want right side trim or space deleted then// use this
 select ltrim('        my');                   # if you want left side trim or space deleted then use this
 
+select concat("mysql","is","fun");
+select concat("i love mysql");
+select replace("i love mysql","mysql","coding");
+select length("i love india")
+
+
  
