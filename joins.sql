@@ -26,6 +26,7 @@ select * from student1 natural join college;            # natural join
 
 select * from student1 left join college on student1.cid=college.cid;      #left table join to the right you see left table all value but right side table only see with duplicate value with left
 select * from college left join student1 on student1.cid=college.cid
+
 union
 select * from college right join student1 on student1.cid=college.cid;     # right table joint to the left
 

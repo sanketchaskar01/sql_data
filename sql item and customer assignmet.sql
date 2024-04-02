@@ -20,9 +20,35 @@ select sum(quantity) from items_ordered;
 drop table items_ordered;
 drop table customers;
 
+
 ------------------------------------------------------------------------------------------------------
 
 select customers.customerid,state,firstname,lastname,order_date,item,quantity,price from customers join items_ordered on customers.customerid=items_ordered.customerid order by customers.state desc;
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+use sanket1;
+select * from customer;
+select * from order1;
+create table customer (cust_id int primary key, cname varchar(20), occupation varchar(20), age int);
+create table order1 ( order_id int , cust_id int,foreign key(cust_id) references customer(cust_id),prod_name varchar(20),order_date varchar(20));
+insert into customer values (101,'peter','engineer',32),(102,'joseph','developer',30),(103,'john','leader',28),(104,'stephen','scientist',45),(105,'suzi','carpenter',26),(106,'bob','actor',25),(107,null,null,null);
+insert into order1 values (1,101,'laptop','2022-01-10'),(2,103,'desktop','2022-02-11'),(3,106,'iphone','2022-03-13'),(4,104,'mobile','2022-03-05'),(5,102,'tv','2022-03-20');
+
+select * from customer where cust_id=107;
+select c.cust_id,c.cname,c.occupation,c.age from customer c left join order1 o on c.cust_id=o.cust_id where o.cust_id is null;
+SELECT C.CNAME FROM CUSTOMER C INNER JOIN ORDER1 O ON C.CUST_ID = O.CUST_ID WHERE O.PROD_NAME = 'LAPTOP';
+SELECT * FROM CUSTOMER C INNER JOIN ORDER1 O ON C.CUST_ID = O.CUST_ID WHERE O.PROD_NAME = 'IPHONE';
+SELECT * FROM CUSTOMER C LEFT JOIN ORDER1 O ON C.CUST_ID = O.CUST_ID WHERE O.CUST_ID IS NULL;
+SELECT COUNT(CUST_ID) AS total_customers_with_orders FROM ORDER1;
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+create table student_info(sid int primary key auto_increment,sname varchar(20), dept varchar(20),percentage float);
+INSERT INTO Student_info (sname, dept, percentage) VALUES('Harry', 'IT', 95.26),('Mac', 'CS', 98.45),('Rox', 'Mechanical', 75.69),('Shree', 'IT', 85.65),('Ramesh', 'CS', 89.45);
+select * from student_info;
+
+SELECT * FROM Student_info WHERE percentage = (SELECT MAX(percentage) FROM Student_info);
+SELECT * FROM Student_info WHERE percentage = ( SELECT MAX(percentage) FROM Student_info WHERE percentage < (SELECT MAX(percentage) FROM Student_info));
+SELECT * FROM Student_info WHERE percentage = ( SELECT MAX(percentage) FROM Student_info);
 
 

@@ -19,7 +19,8 @@ select floor(3/2);                 # this operator see the before pointer value 
 select floor(10/6);
 
 select power(2,2);                 # this operaotr show the power value.
-select power(10,10);               
+select power(10,10); 
+              
 
 select sqrt(10);                  # this operator show the which square root value is acutal values   ex. 3.16227 square root is =10
 select sqrt(12);

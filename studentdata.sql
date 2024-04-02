@@ -86,22 +86,3 @@ select * from studentdata where marks not in (81);
 select count(stud_id),department from studentdata where marks not in(90) group by department;     #if you want to know who is under 90 then this is use
 
 select * from studentdata;     #if you want to see the table
-
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
